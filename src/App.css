@@ -1,10 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;500;700&display=swap');
 
+/* VARIABLES */
+:root {
+  --rosa-claro: #ffccd5;
+  --rosa-oscuro: #ff758f;
+  --rosa-principal: #a4133c;
+
+  --font-claro: white;
+  --font-oscuro: #a4133c;
+
+  --font-base: 'Roboto Mono', monospace;
+}
+
 *,
 *::before,
 *::after,
 html{
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
+  font-family: var(--font-base);
+  /* font-size: 62.5%; */
+  color: var(--font-oscuro);
+  background-color: var(--rosa-claro);
 }
 
 body{
@@ -12,10 +30,6 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 3rem;
-  font-family:'Roboto Mono', monospace;
-  background-color: #ffccd5;
-  color: #ff758f;
   height: 100vh;
 }
 
@@ -23,31 +37,48 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+  width: 300px;
+  height: 200px;
+} 
 
 .numero-input{
-  width: 20%;
-  border-radius: 20px;
-  border: none;
-  padding: .5rem;
-  margin: 1rem;
-  font-family: inherit;
-  font-size: inherit;
+  width: 100%;
+  border-radius: 25px;
+  padding: .8rem;
+  margin: 1.4rem;
+  font-size: 3rem;
   text-align: center;
-  pointer-events: none;
-  background-color: #a4133c;
-  color: white;
+  background-color: var(--rosa-principal);
+  color: var(--font-claro);
+}
+
+.btn-group{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .btn{
   border: none;
-  background-color: inherit;
-  cursor: pointer;
+  background-color: var(--rosa-oscuro);
+  color: var(--font-oscuro);
   font-size: inherit;
-  color: inherit;
+  cursor: pointer;
+  border-radius: 25px;
+  padding: .8rem;
+  margin: .5rem;
+  font-size: 1rem;
+}
+
+.btn-operacion{
+  flex-grow: 1;
+}
+.btn-reset {
+  flex-grow: 3;
 }
 
 .btn:hover,
 .btn:active{
-  transform: scale(0.93);
-}
+  transform: scale(1.1);
+} 
